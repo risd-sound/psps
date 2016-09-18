@@ -1,0 +1,14 @@
+#N canvas 317 23 960 684 10;
+#X text 100 328 ON;
+#X text 224 328 OFF;
+#X text 285 275 <-- click these;
+#X msg 85 267 \; pd dsp 1;
+#X msg 204 267 \; pd dsp 0;
+#X msg 164 122 \; pd dsp \$1;
+#X obj 164 83 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 54 61 This is a very common way to build the audio on/off inside
+your patch ->;
+#X text 435 186 These utilize messages that go directly to the Pd application.
+You do this by using a semicolon at the beginning of the message.;
+#X connect 6 0 5 0;
