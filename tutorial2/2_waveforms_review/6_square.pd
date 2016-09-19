@@ -1,30 +1,30 @@
-#N canvas 466 23 1108 677 10;
+#N canvas 20 23 1108 677 10;
 #X obj 308 378 dac~;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array array_square1 100 float 0;
 #X coords 0 1 99 -1 200 140 1 0 0;
 #X restore 470 398 graph;
-#X obj 793 181 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 793 181 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X text 833 182 <- graph;
 #X msg 308 475 \; pd dsp \$1;
-#X obj 308 427 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 308 427 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 793 218 metro 50;
 #X obj 533 337 tabwrite~ array_square1;
 #X obj 308 132 pack f 200;
 #X obj 308 170 line~;
 #X floatatom 308 91 5 0 0 0 - - -, f 5;
-#N canvas 129 62 487 322 squareWave 0;
+#N canvas 129 62 487 322 squareWave 1;
 #X obj 50 230 outlet~;
 #X obj 50 46 inlet~;
 #X obj 50 89 phasor~;
-#X obj 50 173 expr~ $v1 * 2 - 1;
+#X obj 143 149 expr~ $v1 * 2 - 1;
 #X obj 132 46 inlet;
 #X obj 139 230 outlet~;
-#X obj 50 125 expr~ $v1 > 0.5;
+#X obj 98 112 expr~ $v1 > 0.5;
 #X obj 229 231 outlet~;
-#X text 170 126 if greater than 0.5 output 1 \, otherwise 0;
+#X text 204 113 if greater than 0.5 output 1 \, otherwise 0;
 #X text 170 175 scale and offset \, multiply by 2 and subtract 1;
 #X connect 1 0 2 0;
 #X connect 2 0 6 0;

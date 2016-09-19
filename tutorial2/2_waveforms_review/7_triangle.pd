@@ -1,22 +1,22 @@
-#N canvas 320 23 1317 685 10;
+#N canvas 0 23 1276 685 10;
 #X obj 274 365 dac~;
 #X obj 274 312 *~ 0.3;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array array_tri1 100 float 0;
 #X coords 0 1 99 -1 200 140 1 0 0;
 #X restore 459 466 graph;
-#X obj 740 232 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 740 232 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 781 236 <- graph;
 #X msg 274 500 \; pd dsp \$1;
-#X obj 274 452 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 274 452 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 740 269 metro 50;
 #X obj 274 153 pack f 200;
 #X obj 274 203 line~;
 #X floatatom 274 116 5 0 0 0 - - -, f 5;
 #X obj 438 378 tabwrite~ array_tri1;
-#N canvas 0 23 593 519 triangleWave 0;
+#N canvas 0 23 593 519 triangleWave 1;
 #X msg 377 97 0;
 #X obj 88 189 phasor~;
 #X obj 201 189 phasor~;
@@ -30,7 +30,7 @@
 #X obj 88 481 outlet~;
 #X text 414 95 <- phase synchronization;
 #X text 364 226 triangle wave;
-#X obj 201 138 *~ -1;
+#X obj 176 138 *~ -1;
 #X obj 88 403 expr~ $v1 * 2 - 1;
 #X obj 377 38 loadbang;
 #X obj 89 39 inlet~;
