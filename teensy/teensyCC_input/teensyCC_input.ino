@@ -35,7 +35,7 @@ int const numPins = 2; // change the numer to how many analog pins you will use
 int currentVal[numPins];
 int newVal[numPins];
 int analogPins[] = {
-  0, 1 // list the numbers of each pin you will use seperated by a comma
+  0, 1// list the numbers of each pin you will use seperated by a comma
 };
 
 
@@ -44,7 +44,7 @@ int analogPins[] = {
 int const numDigPinsCC = 3; // change the number to how many digital pins you will use
 int currentDigcc[numDigPinsCC];
 int digitalpincc[] = {
-  0, 1, 2 // list the numbers of each pin you will use seperated by a comma
+  0, 1, 2// list the numbers of each pin you will use seperated by a comma
 };
 
 int digInputcc[numDigPinsCC];
