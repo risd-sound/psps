@@ -1,9 +1,10 @@
 /*
 
-  IN PROGRESS!!!
+  IN PROGRESS!!!!!
 
   RISD Programming Sound: Performance Systems
   Prof. Shawn Greenlee
+
 
   Teensy LC with SparkFun Multiplexer Breakout - 8 Channel (74HC4051)
 
