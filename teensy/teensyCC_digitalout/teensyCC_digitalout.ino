@@ -132,11 +132,11 @@ void loop() {
 
     for (int i = 0; i < numDigPinsCC; i++) {
       if (digitalRead(digitalpincc[i]) == 1 && currentDigcc[i] == 0) {
-        usbMIDI.sendControlChange(i + 50, 0, channel);
+        usbMIDI.sendControlChange(i + 51, 0, channel);
         currentDigcc[i] = 1;
       }
       if (digitalRead(digitalpincc[i]) == 0  && currentDigcc[i] == 1) {
-        usbMIDI.sendControlChange(i + 50, 127, channel);
+        usbMIDI.sendControlChange(i + 51, 127, channel);
         currentDigcc[i] = 0;
       }
     }

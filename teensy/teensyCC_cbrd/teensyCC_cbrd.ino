@@ -4,7 +4,7 @@ RISD IDISC-1528
 Programming Sound: Performance Systems
 Prof. Shawn Greenlee
 
-Teensy LC starter code - PWM out
+Teensy LC starter code - digital out 
 
 !!! remember, only use the 3.3-volt power pin. DO NOT USE 5-volt or you may fry your board!!!
 
@@ -25,55 +25,53 @@ Set: Tools > USB Type > MIDI
 // set analog input pins
 // set for none in this example
 
-int const numPins = 0; //  set number of analog inputs to use
+int const numPins = 1; //  set number of analog inputs to use
 int currentVal[numPins];
 int newVal[numPins];
 int analogPins[] = {
-  // set which analog pins to use
+0,  // set which analog pins to use
 };
+
+
 
 // set digital input pins
-// set for none in this exampl
+// set for none in this example
 
-int const numDigPinsCC = 0; // number of digital pins to send CC
+int const numDigPinsCC = 1; // number of digital pins to send CC
 int currentDigcc[numDigPinsCC];
 int digitalpincc[] = {
-  // which digital pins to use for sending CC
+0,  // which digital pins to use for sending CC
 };
 int digInputcc[numDigPinsCC];
+
 
 // the MIDI channel number to send messages
 const int channel = 1;
 
 elapsedMillis msec = 0;
 
-void HandleCC(byte channel, byte number, byte value) {
+// Here set each what to do when each 0 or 127 MIDI values are received i.e. HIGH or LOW
 
-// Note: note all digital pins can be PWM, see your Teensy LC chart for which can be set. 
-// These should be D3, D4, D6, D9, D10, D16, D17, D20, D22, D23
-  
-  // D3 
+void ccled (byte channel, byte number, byte value) {
 
-  if (number == 63) {
-    analogWrite(3, value * 2);
-  }
+// D1
 
-  // D4 
-  
-  if (number == 64) {
-    analogWrite(4, value * 2);
+  if (number == 61 && value == 127) {
+    digitalWrite(1, HIGH);
+  } else if (number == 61 && value == 0) {
+    digitalWrite(1, LOW);
   }
 
 }
 
 
 void setup() {
-  //  pinMode(0, INPUT_PULLUP);
-  //  pinMode(1, INPUT_PULLUP);
-  //  pinMode(2, INPUT_PULLUP);
-  pinMode(3, OUTPUT);
-  pinMode(4, OUTPUT);
-  //  pinMode(5, INPUT_PULLUP);
+  pinMode(0, INPUT_PULLUP);
+  pinMode(1, OUTPUT);
+ // pinMode(2, OUTPUT);
+ // pinMode(3, OUTPUT);
+ // pinMode(4, OUTPUT);
+ // pinMode(5, OUTPUT);
   //  pinMode(6, INPUT_PULLUP);
   //  pinMode(7, INPUT_PULLUP);
   //  pinMode(8, INPUT_PULLUP);
@@ -83,9 +81,9 @@ void setup() {
   //  pinMode(12, INPUT_PULLUP);
   //  pinMode(13, INPUT_PULLUP);
 
-  usbMIDI.setHandleControlChange(HandleCC);
-
 }
+
+// STOP DO NOT ALTER BELOW UNLESS YOU KNOW WHAT YOU ARE DOING!
 
 void loop() {
   if (msec >= 20) {
@@ -116,11 +114,10 @@ void loop() {
       }
     }
   }
-
+  usbMIDI.setHandleControlChange(ccled) ;
   usbMIDI.read();
 
 }
-
 
 
 
