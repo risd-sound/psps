@@ -1,0 +1,24 @@
+#N canvas 493 98 717 552 10;
+#X obj 328 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 127 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 131 484 dac~;
+#X obj 127 410 *~ 0.4;
+#X obj 328 154 spigot;
+#X obj 362 105 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 381 104 < loop;
+#X text 147 104 < play;
+#X msg 434 240 \; risd /speed 1 \;;
+#X msg 434 276 \; risd /speed 2 \;;
+#X msg 434 314 \; risd /speed 0.5 \;;
+#X obj 127 145 smply~ risd;
+#X connect 0 0 4 0;
+#X connect 1 0 11 0;
+#X connect 3 0 2 0;
+#X connect 3 0 2 1;
+#X connect 4 0 1 0;
+#X connect 5 0 4 1;
+#X connect 11 0 3 0;
+#X connect 11 1 0 0;

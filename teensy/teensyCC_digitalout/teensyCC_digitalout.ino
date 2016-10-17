@@ -1,24 +1,24 @@
 /*
 
-RISD IDISC-1528
-Programming Sound: Performance Systems
-Prof. Shawn Greenlee
+  RISD IDISC-1528
+  Programming Sound: Performance Systems
+  Prof. Shawn Greenlee
 
-Teensy LC starter code - digital out 
+  Teensy LC starter code - digital out
 
-!!! remember, only use the 3.3-volt power pin. DO NOT USE 5-volt or you may fry your board!!!
+  !!! remember, only use the 3.3-volt power pin. DO NOT USE 5-volt or you may fry your board!!!
 
-Code adapted from Yann Seznec www.yannseznec.com
-and pjrc (makers of Teensy). These sources are in public domain.
+  Code adapted from Yann Seznec www.yannseznec.com
+  and pjrc (makers of Teensy). These sources are in public domain.
 
-You must have Teensyduino installed:
-https://www.pjrc.com/teensy/td_download.html
+  You must have Teensyduino installed:
+  https://www.pjrc.com/teensy/td_download.html
 
-When uploading code to board remember to set: Tools > Board > Teensy LC
+  When uploading code to board remember to set: Tools > Board > Teensy LC
 
-&
+  &
 
-Set: Tools > USB Type > MIDI
+  Set: Tools > USB Type > MIDI
 
 */
 
@@ -54,7 +54,7 @@ elapsedMillis msec = 0;
 
 void ccled (byte channel, byte number, byte value) {
 
-// D0
+  // D0
 
   if (number == 60 && value == 127) {
     digitalWrite(0, HIGH);
@@ -62,7 +62,7 @@ void ccled (byte channel, byte number, byte value) {
     digitalWrite(0, LOW);
   }
 
-// D1
+  //D1
 
   if (number == 61 && value == 127) {
     digitalWrite(1, HIGH);
@@ -70,7 +70,7 @@ void ccled (byte channel, byte number, byte value) {
     digitalWrite(1, LOW);
   }
 
-// D2
+  // D2
 
   if (number == 62 && value == 127) {
     digitalWrite(2, HIGH);
@@ -78,7 +78,7 @@ void ccled (byte channel, byte number, byte value) {
     digitalWrite(2, LOW);
   }
 
-// D3
+  // D3
 
   if (number == 63 && value == 127) {
     digitalWrite(3, HIGH);
@@ -86,7 +86,7 @@ void ccled (byte channel, byte number, byte value) {
     digitalWrite(3, LOW);
   }
 
-// D4
+  // D4
 
   if (number == 64 && value == 127) {
     digitalWrite(4, HIGH);
@@ -94,7 +94,7 @@ void ccled (byte channel, byte number, byte value) {
     digitalWrite(4, LOW);
   }
 
-// D5
+  // D5
 
   if (number == 65 && value == 127) {
     digitalWrite(5, HIGH);
