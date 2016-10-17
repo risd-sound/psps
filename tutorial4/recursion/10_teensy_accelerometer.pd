@@ -1,0 +1,57 @@
+#N canvas 536 148 1031 702 10;
+#X floatatom 111 187 5 0 0 0 - - -, f 5;
+#X floatatom 166 187 5 0 0 0 - - -, f 5;
+#X floatatom 221 187 5 0 0 0 - - -, f 5;
+#X floatatom 56 187 5 0 0 0 - - -, f 5;
+#X obj 56 98 ctlin 1;
+#X obj 111 98 ctlin 2;
+#X obj 166 98 ctlin 3;
+#X obj 221 98 ctlin 4;
+#X obj 271 336 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 1524 1;
+#X obj 379 336 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3556 1;
+#X obj 56 280 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3830 1;
+#X obj 56 248 line;
+#X msg 56 219 \$1 100;
+#X obj 114 336 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4572 1;
+#X floatatom 111 249 5 0 0 0 - - -, f 5;
+#X obj 111 297 line;
+#X msg 111 273 \$1 200;
+#X floatatom 271 254 5 0 0 0 - - -, f 5;
+#X obj 271 302 line;
+#X msg 271 278 \$1 200;
+#X floatatom 379 250 5 0 0 0 - - -, f 5;
+#X obj 379 301 line;
+#X msg 379 274 \$1 200;
+#X obj 271 223 scaler 50 75 0 1;
+#X obj 111 218 scaler 50 75 0 1;
+#X obj 379 222 scaler 50 75 0 1;
+#X text 393 64 generic accelerometer seems to report around 50 for
+a low value and 75 for a high value (give or take). An abstraction
+is used to condition the data called [scaler] \, it must be in same
+folder as this patch;
+#X connect 0 0 24 0;
+#X connect 1 0 23 0;
+#X connect 2 0 25 0;
+#X connect 3 0 12 0;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X connect 6 0 1 0;
+#X connect 7 0 2 0;
+#X connect 11 0 10 0;
+#X connect 12 0 11 0;
+#X connect 14 0 16 0;
+#X connect 15 0 13 0;
+#X connect 16 0 15 0;
+#X connect 17 0 19 0;
+#X connect 18 0 8 0;
+#X connect 19 0 18 0;
+#X connect 20 0 22 0;
+#X connect 21 0 9 0;
+#X connect 22 0 21 0;
+#X connect 23 0 17 0;
+#X connect 24 0 14 0;
+#X connect 25 0 20 0;
