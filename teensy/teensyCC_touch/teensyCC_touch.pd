@@ -1,0 +1,15 @@
+#N canvas 517 191 631 510 10;
+#X obj 283 66 ctlin 1;
+#X floatatom 283 137 5 0 0 0 - - -, f 5;
+#X floatatom 283 212 5 0 0 0 - - -, f 5;
+#X obj 283 287 line;
+#X msg 283 248 \$1 100;
+#X obj 283 321 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 283 173 scaler 13 96 0 1;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 2 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 6 0 2 0;
