@@ -1,0 +1,44 @@
+#N canvas 337 150 901 599 10;
+#X obj 33 60 ctlin 1;
+#X floatatom 33 131 5 0 0 0 - - -, f 5;
+#X floatatom 33 206 5 0 0 0 - - -, f 5;
+#X obj 33 281 line;
+#X msg 33 242 \$1 100;
+#X obj 33 315 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 150 130 5 0 0 0 - - -, f 5;
+#X floatatom 150 205 5 0 0 0 - - -, f 5;
+#X obj 150 280 line;
+#X msg 150 241 \$1 100;
+#X obj 150 314 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 150 59 ctlin 2;
+#X floatatom 269 129 5 0 0 0 - - -, f 5;
+#X floatatom 269 204 5 0 0 0 - - -, f 5;
+#X obj 269 279 line;
+#X msg 269 240 \$1 100;
+#X obj 269 313 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 269 58 ctlin 3;
+#X obj 33 167 scaler 14 70 0 1;
+#X obj 150 166 scaler 14 70 0 1;
+#X obj 269 165 scaler 14 70 0 1;
+#X text 481 16 the math in the Teensy code;
+#X connect 0 0 1 0;
+#X connect 1 0 18 0;
+#X connect 2 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 6 0 19 0;
+#X connect 7 0 9 0;
+#X connect 8 0 10 0;
+#X connect 9 0 8 0;
+#X connect 11 0 6 0;
+#X connect 12 0 20 0;
+#X connect 13 0 15 0;
+#X connect 14 0 16 0;
+#X connect 15 0 14 0;
+#X connect 17 0 12 0;
+#X connect 18 0 2 0;
+#X connect 19 0 7 0;
+#X connect 20 0 13 0;
