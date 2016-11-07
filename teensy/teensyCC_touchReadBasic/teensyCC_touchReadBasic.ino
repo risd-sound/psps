@@ -1,6 +1,9 @@
 // with Teensy just stick a wire into pins 0, 1, 3, 4, 15, 16, 17, 18, 19, 22, 23
 // and they become capactive sensors, no other electronic components required
 
+// adapted from http://little-scale.blogspot.com Sebastian Tomczak
+
+
 void setup() {
 }
 

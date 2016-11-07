@@ -1,4 +1,4 @@
-#N canvas 122 23 1442 894 10;
+#N canvas 275 23 1442 894 10;
 #X floatatom 111 244 5 0 0 0 - - -, f 5;
 #X floatatom 166 244 5 0 0 0 - - -, f 5;
 #X floatatom 221 244 5 0 0 0 - - -, f 5;
@@ -191,6 +191,9 @@
 #X obj 374 451 ctlin 22;
 #X obj 429 451 ctlin 23;
 #X obj 484 451 ctlin 24;
+#X text 788 502 24 touch sensors with 3 multiplexer boards (8 channel)
+\; Uses only 3 touch pins on Teensy \; + 3 pins to control multiplexer
+\;;
 #X connect 0 0 6 0;
 #X connect 1 0 7 0;
 #X connect 2 0 8 0;

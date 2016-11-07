@@ -16,6 +16,8 @@
   Jim Lindblom @ SparkFun Electronics
   August 15, 2016
   https://github.com/sparkfun/74HC4051_8-Channel_Mux_Breakout
+  4) http://little-scale.blogspot.com Sebastian Tomczak
+
 
 
 Hardware Hookup:
