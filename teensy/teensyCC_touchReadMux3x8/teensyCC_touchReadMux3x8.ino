@@ -17,12 +17,24 @@
   August 15, 2016
   https://github.com/sparkfun/74HC4051_8-Channel_Mux_Breakout
 
+  Hardware Hookup:
+Mux Breakout ----------- Teensy
+     S0 ------------------- 2
+     S1 ------------------- 3
+     S2 ------------------- 4
+     Z -------------------- input pin 
+    VCC ------------------- 3.3v
+    GND ------------------- GND
+    (VEE should be connected to GND)
+
 */
 
 // pin definitions
 const int selectPins[3] = {2, 3, 4}; // S0~2, S1~3, S2~4  // these could be wired to multiple multiplexer boards
-const int zOutput = 5; // not utilized in this code
-const int zInput = 15; // Connect common (Z) to 15 (touch input), one input pin for 8 ctlin objects 
+const int zInput1 = 15; // Connect common (Z) to 15 (touch input), one input pin for 8 ctlin objects
+const int zInput2 = 16; // Connect common (Z) to 16 (touch input), one input pin for 8 ctlin objects
+const int zInput3 = 17; // Connect common (Z) to 17 (touch input), one input pin for 8 ctlin objects
+
 
 // the MIDI channel number to send messages
 const int channel = 1;
@@ -32,13 +44,16 @@ elapsedMillis msec = 0;
 void setup() {
   // Serial.begin(38400); // for serial monitoring, troubleshooting
   // Set up the select pins as outputs:
-  
+
   for (int i = 0; i < 3; i++)
   {
     pinMode(selectPins[i], OUTPUT);
     digitalWrite(selectPins[i], HIGH);
   }
-  pinMode(zInput, INPUT); // Set up Z as an input
+  pinMode(zInput1, INPUT); // Set up Z as an input
+  pinMode(zInput2, INPUT); // Set up Z as an input
+  pinMode(zInput3, INPUT); // Set up Z as an input
+
 }
 
 void loop() {
@@ -52,16 +67,21 @@ void loop() {
 
     for (byte pin = 0; pin <= 7; pin++) {
       selectMuxPin(pin); // Select one at a time
-      int inputValue = touchRead(15); // and read Z
-      usbMIDI.sendControlChange(pin + 1, constrain(map(inputValue >> 3, 1000, 5000, 0, 127), 0, 127), 1);
+      int inputValue1 = touchRead(15); // and read Z
+      usbMIDI.sendControlChange(pin + 1, constrain(map(inputValue1 >> 3, 1000, 5000, 0, 127), 0, 127), 1);
     }
 
+    for (byte pin = 0; pin <= 7; pin++) {
+      selectMuxPin(pin); // Select one at a time
+      int inputValue2 = touchRead(16); // and read Z
+      usbMIDI.sendControlChange(pin + 9, constrain(map(inputValue2 >> 3, 1000, 5000, 0, 127), 0, 127), 1);
+    }
 
-    // regular touch pin non-multiplexed for comparison
-
-    usbMIDI.sendControlChange(9, constrain(map(touchRead(0), 1000, 5000, 0, 127), 0, 127), 1);
-    // Serial.println (touchRead(0)); // for serial monitoring, troubleshooting
-
+    for (byte pin = 0; pin <= 7; pin++) {
+      selectMuxPin(pin); // Select one at a time
+      int inputValue3 = touchRead(17); // and read Z
+      usbMIDI.sendControlChange(pin + 17, constrain(map(inputValue3 >> 3, 1000, 5000, 0, 127), 0, 127), 1);
+    }
 
     while (usbMIDI.read()) {
       // ignore incoming messages
