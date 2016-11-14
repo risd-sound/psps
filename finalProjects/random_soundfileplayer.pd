@@ -1,0 +1,30 @@
+#N canvas 192 23 830 621 10;
+#X msg 154 213 1;
+#X obj 35 349 dac~;
+#X msg 141 405 \; pd dsp \$1;
+#X obj 141 382 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 163 378 <- turn on sound;
+#X msg 195 213 0;
+#X obj 90 250 readsf~ 2;
+#X obj 35 299 *~ 0.5;
+#X obj 86 299 *~ 0.5;
+#X obj 90 119 random 8;
+#X obj 90 145 + 1;
+#X obj 90 81 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 90 178 open /Users/seg/Desktop/sounds/\$1.wav \, 1;
+#X text 173 123 assusmes a folder with numerical file names (in this
+case 1 thru 8);
+#X text 350 178 file path where \$1 is the random filename;
+#X connect 0 0 6 0;
+#X connect 3 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 6 1 8 0;
+#X connect 7 0 1 0;
+#X connect 8 0 1 1;
+#X connect 9 0 10 0;
+#X connect 10 0 12 0;
+#X connect 11 0 9 0;
+#X connect 12 0 6 0;
