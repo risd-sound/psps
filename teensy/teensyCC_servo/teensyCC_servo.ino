@@ -1,4 +1,3 @@
-// SIX mod May 12 2015
 
 /* code borrowed from Yann Seznec www.yannseznec.com
 and pjrc - these sources are in public domain
