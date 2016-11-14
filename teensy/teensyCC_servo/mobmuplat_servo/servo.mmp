@@ -1,0 +1,1 @@
+{"pdFile":"servo.pd","port":54321,"isOrientationLandscape":false,"startPageIndex":0,"pageCount":1,"canvasType":"iPhone4Inch","isPageScrollShortEnd":false,"version":1.64,"gui":[{"address":"\/servo1","highlightColor":[0,1,1,1],"isHorizontal":false,"frame":[108,50,108,500],"color":[1,0.4,1,1],"range":15,"class":"MMPSlider"}],"backgroundColor":[0.5,0.5,0.5,1]}
