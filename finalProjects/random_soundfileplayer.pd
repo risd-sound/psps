@@ -1,30 +1,72 @@
-#N canvas 192 23 830 621 10;
-#X msg 154 213 1;
-#X obj 35 349 dac~;
-#X msg 141 405 \; pd dsp \$1;
-#X obj 141 382 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#N canvas 362 23 1055 887 10;
+#X msg 368 534 1;
+#X obj 249 670 dac~;
+#X msg 73 542 \; pd dsp \$1;
+#X obj 73 519 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X text 163 378 <- turn on sound;
-#X msg 195 213 0;
-#X obj 90 250 readsf~ 2;
-#X obj 35 299 *~ 0.5;
-#X obj 86 299 *~ 0.5;
-#X obj 90 119 random 8;
-#X obj 90 145 + 1;
-#X obj 90 81 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X msg 90 178 open /Users/seg/Desktop/sounds/\$1.wav \, 1;
-#X text 173 123 assusmes a folder with numerical file names (in this
+#X text 95 515 <- turn on sound;
+#X msg 409 534 0;
+#X obj 304 571 readsf~ 2;
+#X obj 249 620 *~ 0.5;
+#X obj 300 620 *~ 0.5;
+#X obj 245 410 random 8;
+#X obj 243 475 + 1;
+#X obj 304 316 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 304 506 open /Users/seg/Desktop/sounds/\$1.wav \, 1;
+#X text 389 444 assusmes a folder with numerical file names (in this
 case 1 thru 8);
-#X text 350 178 file path where \$1 is the random filename;
+#X text 564 499 file path where \$1 is the random filename;
+#X obj 454 641 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 454 704 1;
+#X obj 304 363 spigot;
+#X obj 243 439 t f b;
+#X msg 273 475 0;
+#X msg 362 286 1;
+#X text 400 288 reset;
+#X obj 365 242 loadbang;
+#X obj 338 316 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 287 260 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X floatatom 299 103 5 0 0 0 - - -, f 5;
+#X obj 288 188 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 287 235 change;
+#X obj 281 288 select 1;
+#X obj 299 142 > 10;
+#X obj 299 74 + 1;
+#X obj 298 44 random 20;
+#X obj 298 18 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X connect 0 0 6 0;
 #X connect 3 0 2 0;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
 #X connect 6 1 8 0;
+#X connect 6 2 15 0;
 #X connect 7 0 1 0;
 #X connect 8 0 1 1;
-#X connect 9 0 10 0;
+#X connect 9 0 18 0;
 #X connect 10 0 12 0;
-#X connect 11 0 9 0;
+#X connect 11 0 17 0;
 #X connect 12 0 6 0;
+#X connect 15 0 16 0;
+#X connect 16 0 23 0;
+#X connect 17 0 9 0;
+#X connect 18 0 10 0;
+#X connect 18 1 19 0;
+#X connect 19 0 23 0;
+#X connect 20 0 23 0;
+#X connect 22 0 20 0;
+#X connect 23 0 17 1;
+#X connect 24 0 28 0;
+#X connect 25 0 29 0;
+#X connect 26 0 27 0;
+#X connect 27 0 24 0;
+#X connect 28 0 11 0;
+#X connect 29 0 26 0;
+#X connect 30 0 25 0;
+#X connect 31 0 30 0;
+#X connect 32 0 31 0;
