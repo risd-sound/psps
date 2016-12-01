@@ -17,14 +17,16 @@
 // Motor A - these are the two outputs for motor A, controlled by INA1, INA2 and PWMA
 // Motor B - these are the two outputs for motor B, controlled by INB1, INB2 and PWMB
 
-// Power supply to +/- input as alternative to Vmotor pin
-// Vcc to 3v on Teensy (power bus on breadboard)
+// WHAT TO CONNECT:
+// Power supply to +/- input as alternative to Vmotor pin (leave Vmotor unconnected in this case)
+// Vcc to 3v on Teensy (power bus on breadboard) 
 // GND to ground on Teensy (ground bus on breadboard)
 // AIN2 to Digital 4 on Teensy
 // AIN1 to Digital 5 on Teensy
 // BIN1 to Digital 6 on Teensy
 // BIN2 to Digital 7 on Teensy
 // PWMA and PWMB to Vcc (Vcc row on breadboard)
+// STBY - leave unconnected, if you connect to ground it disables the motors (might be handy in some cases)
 
 
 #include <Stepper.h>
