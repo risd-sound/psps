@@ -1,0 +1,28 @@
+#N canvas 403 125 722 482 10;
+#X obj 138 336 ctlout 60;
+#X msg 68 200 127;
+#X msg 367 200 0;
+#X obj 68 162 until;
+#X floatatom 83 92 5 0 0 0 - - -, f 5;
+#X obj 68 128 f;
+#X obj 68 54 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 367 162 until;
+#X floatatom 382 92 5 0 0 0 - - -, f 5;
+#X obj 367 128 f;
+#X obj 367 54 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 115 199 one direction;
+#X text 421 199 the other direction;
+#X text 420 91 number of revolutions;
+#X text 126 91 number of revolutions;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
+#X connect 4 0 5 1;
+#X connect 5 0 3 0;
+#X connect 6 0 5 0;
+#X connect 7 0 2 0;
+#X connect 8 0 9 1;
+#X connect 9 0 7 0;
+#X connect 10 0 9 0;
