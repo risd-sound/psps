@@ -1,0 +1,46 @@
+#N canvas 767 109 1226 935 10;
+#X obj 217 43 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 4000 1;
+#X floatatom 217 203 5 0 0 0 - - -, f 5;
+#X text 327 239 creation arguments are OSC address;
+#X msg 394 360 disconnect;
+#X obj 217 444 netsend -u -b;
+#X msg 396 298 connect localhost 5000;
+#X obj 217 284 list prepend send;
+#X obj 217 309 list trim;
+#X text 489 360 don't send;
+#X obj 217 239 oscformat slider;
+#X text 546 297 send as UDP \, localhost is to the same comouter \,
+enter an IP address of computer on same network to send to that computer
+;
+#X text 241 138 SEND: to Pd patch or other software receiving on send
+port;
+#N canvas 532 190 803 560 receive_in_Pd 0;
+#X obj 266 181 netreceive -u -b;
+#X msg 158 101 listen 5000;
+#X msg 478 90 listen 0;
+#X text 567 89 stop listening;
+#X text 374 178 UDP packets \, binary output, f 13;
+#X obj 266 294 route slider;
+#X floatatom 266 344 5 0 0 0 - - -, f 5;
+#X obj 266 228 oscparse;
+#X obj 117 336 print;
+#X obj 266 262 list trim;
+#X text 260 101 listen on port 5000;
+#X text 213 41 RECEIVE: don't use if trying to connect to other software!
+This is to receive the data in Pd;
+#X connect 0 0 7 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 5 0 6 0;
+#X connect 7 0 8 0;
+#X connect 7 0 9 0;
+#X connect 9 0 5 0;
+#X restore 215 492 pd receive_in_Pd;
+#X connect 0 0 1 0;
+#X connect 1 0 9 0;
+#X connect 3 0 4 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 7 0 4 0;
+#X connect 9 0 6 0;
