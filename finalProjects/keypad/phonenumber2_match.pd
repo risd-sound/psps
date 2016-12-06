@@ -1,7 +1,7 @@
 #N canvas 116 41 1451 838 10;
 #X obj 554 431 6_killspaces;
-#X obj 554 403 tosymbol;
-#X obj 553 453 unpack s f;
+#X obj 554 402 tosymbol;
+#X obj 554 453 unpack s f;
 #X obj 554 378 6_pak 7, f 33;
 #X obj 150 147 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -40,7 +40,7 @@
 #X msg 648 280 0;
 #X obj 626 158 t b b;
 #X obj 626 106 loadbang;
-#X obj 553 530 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 554 530 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 150 172 a;
 #X msg 181 172 b;
@@ -53,14 +53,14 @@
 #X msg 407 172 i;
 #X msg 440 172 j;
 #X obj 749 287 t a b;
-#X obj 553 501 6_match abcdefg;
-#X obj 656 529 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 554 501 6_match abcdefg;
+#X obj 657 529 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 656 500 6_match jihgfed;
+#X obj 657 500 6_match jihgfed;
 #X text 720 130 < press here to simulate hanging up phone;
-#X obj 765 528 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 766 528 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 765 499 6_match acegija;
+#X obj 766 499 6_match acegija;
 #X text 148 113 1;
 #X text 183 113 2;
 #X text 215 113 3;
@@ -71,13 +71,13 @@
 #X text 381 113 8;
 #X text 405 113 9;
 #X text 440 113 0;
-#X text 550 581 123-4567;
-#X text 650 580 098-7654;
-#X text 763 577 135-7901;
-#X obj 952 584 s reset;
+#X text 551 581 123-4567;
+#X text 651 580 098-7654;
+#X text 764 577 135-7901;
+#X obj 953 584 s reset;
 #X obj 974 70 r reset;
-#X obj 974 98 t b b;
 #X msg 1001 217 z;
+#X obj 974 98 t b;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 2 0 41 0;
@@ -114,6 +114,7 @@
 #X connect 25 0 26 0;
 #X connect 26 0 21 1;
 #X connect 27 0 20 0;
+#X connect 27 1 62 0;
 #X connect 28 0 19 0;
 #X connect 29 0 60 0;
 #X connect 30 0 5 0;
@@ -133,7 +134,6 @@
 #X connect 43 0 42 0;
 #X connect 45 0 60 0;
 #X connect 46 0 45 0;
-#X connect 61 0 62 0;
-#X connect 62 0 19 0;
-#X connect 62 1 63 0;
-#X connect 63 0 3 6;
+#X connect 61 0 63 0;
+#X connect 62 0 3 6;
+#X connect 63 0 19 0;
