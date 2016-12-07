@@ -1,5 +1,7 @@
+// paired with US5881LUA hall effect sensor
+
+
 // set analog input pins
-// set for none in this example
 
 int const numPins = 0; //  set number of analog inputs to use
 int currentVal[numPins];
@@ -7,15 +9,14 @@ int newVal[numPins];
 int analogPins[] = {
   // set which analog pins to use
 };
-
+//
+//
 
 // set digital input pins
-// set for none in this example
-
-int const numDigPinsCC = 0; // number of digital pins to send CC
+int const numDigPinsCC = 4; // number of digital pins to send CC
 int currentDigcc[numDigPinsCC];
 int digitalpincc[] = {
-  // which digital pins to use for sending CC
+5, 6, 7, 8, // which digital pins to use for sending CC
 };
 int digInputcc[numDigPinsCC];
 
@@ -55,20 +56,16 @@ void ccsolenoid (byte channel, byte number, byte value) {
 }
 
 
-
-
-
-
 void setup() {
   pinMode(0, OUTPUT);
   pinMode(1, OUTPUT);
   pinMode(2, OUTPUT);
   pinMode(3, OUTPUT);
   //  pinMode(4, OUTPUT);
-  //  pinMode(5, OUTPUT);
-  //  pinMode(6, INPUT_PULLUP);
-  //  pinMode(7, INPUT_PULLUP);
-  //  pinMode(8, INPUT_PULLUP);
+  pinMode(5, INPUT);
+  pinMode(6, INPUT);
+  pinMode(7, INPUT);
+  pinMode(8, INPUT);
   //  pinMode(9, INPUT_PULLUP);
   //  pinMode(10, INPUT_PULLUP);
   //  pinMode(11, INPUT_PULLUP);
@@ -98,20 +95,30 @@ void loop() {
 
     // analog pins
 
-    for (int i = 0; i < numPins; i++) {
-
-      newVal[i] = analogRead(analogPins[i]);
-
-      if (abs(newVal[i] - currentVal[i]) > 3) {
-        usbMIDI.sendControlChange(i + 1, newVal[i] >> 3, channel);
-        currentVal[i] = newVal[i];
-      }
-    }
+        for (int i = 0; i < numPins; i++) {
+    
+          newVal[i] = analogRead(analogPins[i]);
+    
+          if (abs(newVal[i] - currentVal[i]) > 3) {
+            usbMIDI.sendControlChange(i + 1, newVal[i] >> 3, channel);
+            currentVal[i] = newVal[i];
+          }
+        }
   }
   usbMIDI.setHandleControlChange(ccsolenoid) ;
   usbMIDI.read();
-
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-#N canvas 234 96 1137 650 10;
+#N canvas 917 388 1137 650 10;
 #X obj 170 490 ctlout 60;
 #X obj 170 407 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -14,16 +14,16 @@
 #X obj 365 454 * 127;
 #X obj 365 490 ctlout 63;
 #X floatatom 116 498 5 0 0 0 - - -, f 5;
-#X obj 237 47 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 262 -7 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 237 123 f 0;
-#X obj 321 150 + 1;
-#X obj 237 162 t f f;
-#X floatatom 237 198 5 0 0 0 - - -, f 5;
-#X msg 419 134 0;
-#X obj 237 227 select 0 1 2 3 4 5;
-#X floatatom 305 47 5 0 0 0 - - -, f 5;
-#X obj 237 88 metro 100;
+#X obj 262 69 f 0;
+#X obj 346 96 + 1;
+#X obj 262 108 t f f;
+#X floatatom 262 144 5 0 0 0 - - -, f 5;
+#X msg 444 80 0;
+#X obj 262 173 select 0 1 2 3 4 5;
+#X floatatom 330 -7 5 0 0 0 - - -, f 5;
+#X obj 262 34 metro 100;
 #X obj 235 490 ctlout 62;
 #X obj 300 490 ctlout 61;
 #X text 444 494 alternate order so that you don't trigger two solenoids
@@ -48,6 +48,30 @@ and the other) \; this is just an intuitive guess...;
 #X text 619 323 this set-up immediately returns solenoid to its rest-state
 \, so that it is not holding in the push-state (which could cause heat
 to build up);
+#X obj 157 263 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 625 82 5 0 0 0 - - -, f 5;
+#X obj 625 45 ctlin 51;
+#X floatatom 680 82 5 0 0 0 - - -, f 5;
+#X obj 680 45 ctlin 52;
+#X floatatom 735 82 5 0 0 0 - - -, f 5;
+#X floatatom 790 82 5 0 0 0 - - -, f 5;
+#X obj 735 45 ctlin 53;
+#X obj 790 45 ctlin 54;
+#X obj 296 262 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 398 258 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 534 256 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 625 108 change;
+#X obj 680 108 change;
+#X obj 735 108 change;
+#X obj 790 108 change;
+#X obj 625 139 select 127;
+#X obj 694 139 select 127;
+#X obj 762 139 select 127;
+#X obj 831 139 select 127;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X connect 2 0 10 0;
@@ -91,3 +115,23 @@ to build up);
 #X connect 36 0 7 0;
 #X connect 37 0 7 0;
 #X connect 38 0 37 0;
+#X connect 40 0 23 0;
+#X connect 41 0 52 0;
+#X connect 42 0 41 0;
+#X connect 43 0 53 0;
+#X connect 44 0 43 0;
+#X connect 45 0 54 0;
+#X connect 46 0 55 0;
+#X connect 47 0 45 0;
+#X connect 48 0 46 0;
+#X connect 49 0 27 0;
+#X connect 50 0 31 0;
+#X connect 51 0 35 0;
+#X connect 52 0 56 0;
+#X connect 53 0 57 0;
+#X connect 54 0 58 0;
+#X connect 55 0 59 0;
+#X connect 56 0 40 0;
+#X connect 57 0 49 0;
+#X connect 58 0 50 0;
+#X connect 59 0 51 0;
